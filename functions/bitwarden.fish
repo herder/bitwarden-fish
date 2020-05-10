@@ -1,8 +1,8 @@
-function bwu
+function bwu --description "Unlock the Bitwarden session"
     set -xU BW_SESSION (bw unlock --raw $argv[1])
   end
 
-function bwcopy
+function bwcopy --description "Find and copy a Bitwarden password"
   if command -sq bw and command -sq fzf-tmux and command -sq xclip
     bw get item (
     bw list items \
